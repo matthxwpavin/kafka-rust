@@ -13,7 +13,7 @@ fn main() {
         match stream {
             Ok(mut _stream) => {
                 println!("accepted new connection");
-                _stream.write_all(b"00000007".as_slice()).unwrap();
+                _stream.write_all(&[0, 0, 0, 0, 0, 0, 0, 7]).unwrap();
             }
             Err(e) => {
                 println!("error: {}", e);
